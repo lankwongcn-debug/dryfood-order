@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="zh-HK"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Dry Food Order Form</title>
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font:16px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+background:#f4f6fa;color:#16233c;padding-bottom:150px}
+header{background:#1f3864;color:#fff;padding:14px 16px 13px;position:sticky;top:0;z-index:10;
+box-shadow:0 2px 10px rgba(0,0,0,.18)}
+h1{margin:0 0 4px;font-size:18px;letter-spacing:.2px}
+.hint{font-size:11.5px;opacity:.75;margin-bottom:9px;line-height:1.35}
+.meta{display:flex;gap:8px}
+.meta input{flex:1;min-width:0;padding:10px 11px;border:0;border-radius:9px;font-size:16px;
+background:rgba(255,255,255,.16);color:#fff}
+.meta input::placeholder{color:rgba(255,255,255,.7)}
+.wrap{padding:10px 12px}
+.cat{margin:16px 0 6px;padding:9px 12px;background:#d9e2f3;color:#1f3864;
+font-weight:700;font-size:13.5px;letter-spacing:.6px;border-radius:9px}
+.row{display:flex;align-items:center;gap:10px;background:#fff;border-radius:10px;
+padding:9px 10px 9px 13px;margin-bottom:6px;box-shadow:0 1px 2px rgba(20,35,60,.07)}
+.row.on{background:#e8f5e9;box-shadow:0 0 0 1.5px #66bb6a inset}
+.nm{flex:1;min-width:0;font-size:15px}
+.pk{display:block;font-size:11.5px;color:#7a869a;margin-top:1px}
+input[type=number]{width:74px;flex:none;padding:11px 6px;text-align:center;font-size:17px;
+font-weight:600;border:1.5px solid #ccd4e2;border-radius:9px;background:#fbfcfe;color:#16233c}
+input[type=number]:focus{outline:none;border-color:#1f3864;background:#fff}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+footer{position:fixed;left:0;right:0;bottom:0;background:#fff;padding:10px 12px 15px;
+box-shadow:0 -3px 14px rgba(20,35,60,.16)}
+#cnt{text-align:center;font-size:13px;color:#5a6782;margin-bottom:8px}
+#cnt b{color:#1f3864;font-size:16px}
+button{width:100%;padding:15px;border:0;border-radius:11px;font-size:16.5px;font-weight:700;
+color:#fff;background:#25d366;margin-bottom:7px}
+.two{display:flex;gap:7px;margin-bottom:0}
+.two button{margin:0;padding:11px;font-size:14px;background:#5a6782}
+.two button.red{background:#c0392b}
+button:disabled{background:#c3cad6}
+#saved{text-align:center;font-size:11px;color:#8b95a7;margin-top:7px}
+</style></head><body>
+
+<header>
+  <h1>DRY FOOD ORDER</h1>
+  <div class="hint">填完撳綠色掣發出 &mdash; 發出嘅係文字訊息,唔係呢個檔案<br>
+  Fill in, then press the green button. It sends a text message, not this file.</div>
+  <div class="meta">
+    <input id="who" placeholder="你個名 / Your name" oninput="save()">
+    <input id="when" type="date" onchange="save()">
+  </div>
+</header>
+
+<div class="wrap">
+<div class="cat">FROZEN</div>
+<label class="row"><span class="nm">Smoked Salmon KG<span class="pk">2 pack</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Smoked Salmon KG" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Ultra Chips Box<span class="pk">2 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Ultra Chips Box" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Sweet Potato Chips<span class="pk">1 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Sweet Potato Chips" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Bacon Rashers 5KG<span class="pk">6 pack</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Bacon Rashers 5KG" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Nuggets KG<span class="pk">4 pack</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Nuggets KG" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Hash Brown Oval<span class="pk">2 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Hash Brown Oval" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Beef Slider<span class="pk">3 bag</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Beef Slider" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Elvys Beef Paddys<span class="pk">1 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Elvys Beef Paddys" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Salmon Portion<span class="pk">1 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Salmon Portion" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Pancake<span class="pk">2 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Pancake" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Acai<span class="pk">8 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Acai" placeholder="" oninput="upd()"></label>
+<div class="cat">DAIRY &amp; CHEESE</div>
+<label class="row"><span class="nm">Danish Fetta<span class="pk">2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Danish Fetta" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Sliced Praga Ham KG</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Sliced Praga Ham KG" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Haloumi Alambra 850G</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Haloumi Alambra 850G" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Side Butter</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Side Butter" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Labneh</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Labneh" placeholder="" oninput="upd()"></label>
+<div class="cat">MILK &amp; DRINKS</div>
+<label class="row"><span class="nm">Oat Milk</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Oat Milk" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Lactose Free Milk</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Lactose Free Milk" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Soy Milk</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Soy Milk" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Water</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Water" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Sparkling Water</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Sparkling Water" placeholder="" oninput="upd()"></label>
+<div class="cat">SAUCES &amp; DRESSINGS</div>
+<label class="row"><span class="nm">Maple Syrup<span class="pk">2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Maple Syrup" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Caesar Dressing<span class="pk">2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Caesar Dressing" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Burger Sauce 1L<span class="pk">3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Burger Sauce 1L" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Smoky Chipotle Mayo 1L<span class="pk">3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Smoky Chipotle Mayo 1L" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Aioli 2.2KG<span class="pk">3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Aioli 2.2KG" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Hollandaise French</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Hollandaise French" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Chilli Sauce</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chilli Sauce" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Mayo</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Mayo" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Italian Glaze</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Italian Glaze" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">BBQ Sauce 4L</span><input type="number" inputmode="numeric" min="0" step="1" data-n="BBQ Sauce 4L" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Tomato Sauce 4L</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Tomato Sauce 4L" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Dijon Mustard 2.2KG</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Dijon Mustard 2.2KG" placeholder="" oninput="upd()"></label>
+<div class="cat">SPREADS &amp; TOPPINGS</div>
+<label class="row"><span class="nm">Chocolate Topping</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chocolate Topping" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Strawberry Topping</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Strawberry Topping" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Caramel Topping</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Caramel Topping" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Vanilla Topping</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Vanilla Topping" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Strawberry Jam</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Strawberry Jam" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Peanut Butter 2KG<span class="pk">2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Peanut Butter 2KG" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Honey 3KG</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Honey 3KG" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Vegemite 500G</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Vegemite 500G" placeholder="" oninput="upd()"></label>
+<div class="cat">SPICES &amp; SEASONING</div>
+<label class="row"><span class="nm">Portuguese Seasoning</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Portuguese Seasoning" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Chilli Flakes</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chilli Flakes" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Paprika</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Paprika" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Dukkah</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Dukkah" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Sumac</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Sumac" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Chicken Salt</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chicken Salt" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Black Pepper</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Black Pepper" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Salt Portions</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Salt Portions" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Pepper Portions</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Pepper Portions" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Cinnamon Sugar 500G</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cinnamon Sugar 500G" placeholder="" oninput="upd()"></label>
+<div class="cat">NUTS, SEEDS &amp; GRAINS</div>
+<label class="row"><span class="nm">Pumpkin Pepitas KG</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Pumpkin Pepitas KG" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Raw Almond</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Raw Almond" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Almond Flakes KG</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Almond Flakes KG" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Pistachio Kernel KG</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Pistachio Kernel KG" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Chia Seeds</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chia Seeds" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Quinoa</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Quinoa" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Chickpeas</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chickpeas" placeholder="" oninput="upd()"></label>
+<div class="cat">OILS, VINEGAR &amp; BAKING</div>
+<label class="row"><span class="nm">Cottonseed Oil 20L<span class="pk">1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cottonseed Oil 20L" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">White Vinegar 4L</span><input type="number" inputmode="numeric" min="0" step="1" data-n="White Vinegar 4L" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Apple Cider Vinegar</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Apple Cider Vinegar" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Baking Paper</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Baking Paper" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Fairy Floss Pink</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Fairy Floss Pink" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Pink Marshmallow Floss</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Pink Marshmallow Floss" placeholder="" oninput="upd()"></label>
+<div class="cat">PACKAGING &amp; CONSUMABLES</div>
+<label class="row"><span class="nm">Cling Wrap</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cling Wrap" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Aluminium Foil</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Aluminium Foil" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Gloves (500/box)</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Gloves (500/box)" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Wooden Knives</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Wooden Knives" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Wooden Spoons</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Wooden Spoons" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Wooden Forks</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Wooden Forks" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Equal Sticks</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Equal Sticks" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Cocktail Straw</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cocktail Straw" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Cup Tray</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cup Tray" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">T/A Plastic Box</span><input type="number" inputmode="numeric" min="0" step="1" data-n="T/A Plastic Box" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">T/A Plastic Lid</span><input type="number" inputmode="numeric" min="0" step="1" data-n="T/A Plastic Lid" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Handwash Towel</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Handwash Towel" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Paper Towel Roll</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Paper Towel Roll" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Pink Chux</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Pink Chux" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Blue Chux</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Blue Chux" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Brown Chux</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Brown Chux" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Garbage Bags 120L<span class="pk">3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Garbage Bags 120L" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">Invoice Roll</span><input type="number" inputmode="numeric" min="0" step="1" data-n="Invoice Roll" placeholder="" oninput="upd()"></label>
+<div class="cat">M&amp;J CHICKENS (separate supplier)</div>
+<label class="row"><span class="nm">1/2 Cut Chargrill Breast</span><input type="number" inputmode="numeric" min="0" step="1" data-n="1/2 Cut Chargrill Breast" placeholder="" oninput="upd()"></label>
+<label class="row"><span class="nm">120g Cooked Schnitzel</span><input type="number" inputmode="numeric" min="0" step="1" data-n="120g Cooked Schnitzel" placeholder="" oninput="upd()"></label>
+</div>
+
+<footer>
+  <div id="cnt">仲未填 &middot; nothing entered yet</div>
+  <button id="send" onclick="send()" disabled>用 WhatsApp 發出 &rarr;</button>
+  <div class="two">
+    <button onclick="copyTxt()">複製文字 Copy</button>
+    <button class="red" onclick="clearAll()">清空 Clear</button>
+  </div>
+  <div id="saved">自動儲存喺呢部手機 &middot; auto-saved on this phone</div>
+</footer>
+
+<script>
+var KEY = 'dryfood-order-v1';
+var qty = document.querySelectorAll('input[type=number]');
+var who = document.getElementById('who');
+var when = document.getElementById('when');
+
+function todayStr(){
+  var d = new Date(), m = d.getMonth() + 1, day = d.getDate();
+  return d.getFullYear() + '-' + (m < 10 ? '0' + m : m) + '-' + (day < 10 ? '0' + day : day);
+}
+
+function save(){
+  var o = {who: who.value, when: when.value, q: {}};
+  for (var i = 0; i < qty.length; i++){
+    if (qty[i].value !== '') o.q[qty[i].dataset.n] = qty[i].value;
+  }
+  try { localStorage.setItem(KEY, JSON.stringify(o)); } catch(e){}
+}
+
+function load(){
+  var raw = null;
+  try { raw = localStorage.getItem(KEY); } catch(e){}
+  if (!raw){ when.value = todayStr(); return; }
+  var o;
+  try { o = JSON.parse(raw); } catch(e){ when.value = todayStr(); return; }
+  who.value = o.who || '';
+  when.value = o.when || todayStr();
+  for (var i = 0; i < qty.length; i++){
+    var v = o.q ? o.q[qty[i].dataset.n] : null;
+    if (v != null) qty[i].value = v;
+  }
+}
+
+function picked(){
+  var out = [];
+  for (var i = 0; i < qty.length; i++){
+    if (qty[i].value !== '' && Number(qty[i].value) > 0)
+      out.push({n: qty[i].dataset.n, q: qty[i].value});
+  }
+  return out;
+}
+
+function upd(){
+  for (var i = 0; i < qty.length; i++){
+    qty[i].parentNode.className = (qty[i].value !== '' && Number(qty[i].value) > 0)
+      ? 'row on' : 'row';
+  }
+  var p = picked();
+  document.getElementById('cnt').innerHTML = p.length
+    ? '已填 <b>' + p.length + '</b> 樣 &middot; ' + p.length + ' items'
+    : '仲未填 &middot; nothing entered yet';
+  document.getElementById('send').disabled = p.length === 0;
+  save();
+}
+
+function build(){
+  var p = picked();
+  var t = 'DRY FOOD ORDER\n';
+  if (when.value) t += 'Date: ' + when.value + '\n';
+  if (who.value.trim()) t += 'By: ' + who.value.trim() + '\n';
+  t += '------------------\n';
+  for (var i = 0; i < p.length; i++) t += p[i].q + ' x ' + p[i].n + '\n';
+  t += '------------------\n' + p.length + ' items';
+  return t;
+}
+
+function send(){
+  location.href = 'https://wa.me/?text=' + encodeURIComponent(build());
+}
+
+function copyTxt(){
+  var t = build();
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(t).then(function(){
+      alert('已複製,貼落 WhatsApp 就得');
+    }, function(){ prompt('複製呢段文字:', t); });
+  } else {
+    prompt('複製呢段文字:', t);
+  }
+}
+
+function clearAll(){
+  if (!confirm('清空全部數量?')) return;
+  for (var i = 0; i < qty.length; i++) qty[i].value = '';
+  try { localStorage.removeItem(KEY); } catch(e){}
+  when.value = todayStr();
+  upd();
+}
+
+load();
+upd();
+</script>
+</body></html>
