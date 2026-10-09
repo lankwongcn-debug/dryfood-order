@@ -326,8 +326,12 @@ function drawTable(){
     g.fillText(fmt(p[i].o), cols[3], y + 38);
     y += RH;
   }
+  // Spreadsheet-style grid: a line under every row and between columns.
   g.strokeStyle = '#ccd4e2'; g.lineWidth = 2;
   g.strokeRect(PAD - 10, HEAD - 40, W - 2 * PAD + 20, y - (HEAD - 40));
+  g.lineWidth = 1;
+  for (var r = HEAD - 40 + RH; r < y; r += RH){ g.beginPath(); g.moveTo(PAD - 10, r); g.lineTo(W - PAD + 10, r); g.stroke(); }
+  for (var k = 1; k < 4; k++){ g.beginPath(); g.moveTo(cols[k] - 15, HEAD - 40); g.lineTo(cols[k] - 15, y); g.stroke(); }
   g.fillStyle = '#1f3864'; g.font = 'bold 28px Arial, sans-serif';
   g.fillText(p.length + ' counted  \u00b7  ' + toOrder + ' to order', PAD, y + 55);
   if (noteLines.length){
