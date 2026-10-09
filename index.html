@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="zh-HK"><head>
+<html lang="en-AU"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -53,124 +53,124 @@ button:disabled{background:#c3cad6}
 
 <header>
   <h1>DRY FOOD ORDER</h1>
-  <div class="hint">填完撳綠色掣發出 &mdash; 發出嘅係文字訊息,唔係呢個檔案<br>
-  <b>賣晒就撳格仔右邊嘅 &laquo;0&raquo;</b> &mdash; 0 會照樣列出嚟,同空白唔同<br>
-  A 0 stays on the list (sold out). Blank means not answered.</div>
+  <div class="hint">Fill in the quantities, then tap the green button to send by WhatsApp.<br>
+  <b>Sold out? Tap the &laquo;0&raquo; on the right.</b> A 0 stays on the order; blank means not answered.<br>
+  Grey &laquo;Weekly&raquo; = usual amount per week (reference only).</div>
   <div class="meta">
-    <input id="who" placeholder="你個名 / Your name" oninput="save()">
+    <input id="who" placeholder="Your name" oninput="save()">
     <input id="when" type="date" onchange="save()">
   </div>
 </header>
 
 <div class="wrap">
 <div class="cat">FROZEN</div>
-<label class="row"><span class="nm">Smoked Salmon KG<span class="pk">每週 2 pack</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Smoked Salmon KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Ultra Chips Box<span class="pk">每週 2 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Ultra Chips Box" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Sweet Potato Chips<span class="pk">每週 1 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Sweet Potato Chips" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Bacon Rashers 5KG<span class="pk">每週 6 pack</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Bacon Rashers 5KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Nuggets KG<span class="pk">每週 4 pack</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Nuggets KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Hash Brown Oval<span class="pk">每週 2 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Hash Brown Oval" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Beef Slider<span class="pk">每週 3 bag</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Beef Slider" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Elvys Beef Paddys<span class="pk">每週 1 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Elvys Beef Paddys" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Salmon Portion<span class="pk">每週 1 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Salmon Portion" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Pancake<span class="pk">每週 2 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Pancake" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Acai<span class="pk">每週 8 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Acai" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Chorizo<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chorizo" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Smoked Salmon KG<span class="pk">Weekly: 2 pack</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Smoked Salmon KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Ultra Chips Box<span class="pk">Weekly: 2 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Ultra Chips Box" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Sweet Potato Chips<span class="pk">Weekly: 1 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Sweet Potato Chips" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Bacon Rashers 5KG<span class="pk">Weekly: 6 pack</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Bacon Rashers 5KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Nuggets KG<span class="pk">Weekly: 4 pack</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Nuggets KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Hash Brown Oval<span class="pk">Weekly: 2 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Hash Brown Oval" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Beef Slider<span class="pk">Weekly: 3 bag</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Beef Slider" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Elvys Beef Paddys<span class="pk">Weekly: 1 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Elvys Beef Paddys" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Salmon Portion<span class="pk">Weekly: 1 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Salmon Portion" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Pancake<span class="pk">Weekly: 2 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Pancake" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Acai<span class="pk">Weekly: 8 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Acai" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Chorizo<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chorizo" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
 <div class="cat">DAIRY &amp; CHEESE</div>
-<label class="row"><span class="nm">Danish Fetta<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Danish Fetta" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Sliced Praga Ham KG<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Sliced Praga Ham KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Haloumi Alambra 850G<span class="pk">每週 10</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Haloumi Alambra 850G" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Side Butter<span class="pk">每週 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Side Butter" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Labneh<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Labneh" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Eggs<span class="pk">每週 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Eggs" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Shredded Parmesan<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Shredded Parmesan" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Mozzarella Shred Cheese<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Mozzarella Shred Cheese" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Tasty Slice Cheese 1.5KG<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Tasty Slice Cheese 1.5KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Hi Melt Burger Cheese<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Hi Melt Burger Cheese" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Danish Fetta<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Danish Fetta" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Sliced Praga Ham KG<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Sliced Praga Ham KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Haloumi Alambra 850G<span class="pk">Weekly: 10</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Haloumi Alambra 850G" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Side Butter<span class="pk">Weekly: 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Side Butter" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Labneh<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Labneh" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Eggs<span class="pk">Weekly: 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Eggs" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Shredded Parmesan<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Shredded Parmesan" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Mozzarella Shred Cheese<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Mozzarella Shred Cheese" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Tasty Slice Cheese 1.5KG<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Tasty Slice Cheese 1.5KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Hi Melt Burger Cheese<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Hi Melt Burger Cheese" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
 <div class="cat">MILK &amp; DRINKS</div>
-<label class="row"><span class="nm">Oat Milk<span class="pk">每週 4</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Oat Milk" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Lactose Free Milk<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Lactose Free Milk" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Soy Milk<span class="pk">每週 5</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Soy Milk" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Almond Milk<span class="pk">每週 10</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Almond Milk" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Water<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Water" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Sparkling Water<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Sparkling Water" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Oat Milk<span class="pk">Weekly: 4</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Oat Milk" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Lactose Free Milk<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Lactose Free Milk" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Soy Milk<span class="pk">Weekly: 5</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Soy Milk" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Almond Milk<span class="pk">Weekly: 10</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Almond Milk" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Water<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Water" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Sparkling Water<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Sparkling Water" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
 <div class="cat">SAUCES &amp; DRESSINGS</div>
-<label class="row"><span class="nm">Maple Syrup<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Maple Syrup" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Caesar Dressing<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Caesar Dressing" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Burger Sauce 1L<span class="pk">每週 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Burger Sauce 1L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Smoky Chipotle Mayo 1L<span class="pk">每週 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Smoky Chipotle Mayo 1L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Aioli 2.2KG<span class="pk">每週 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Aioli 2.2KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Hollandaise French<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Hollandaise French" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Chilli Sauce<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Chilli Sauce" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Mayo<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Mayo" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Italian Glaze<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Italian Glaze" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">BBQ Sauce 4L<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="BBQ Sauce 4L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Tomato Sauce 4L<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Tomato Sauce 4L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Dijon Mustard 2.2KG<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Dijon Mustard 2.2KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Maple Syrup<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Maple Syrup" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Caesar Dressing<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Caesar Dressing" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Burger Sauce 1L<span class="pk">Weekly: 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Burger Sauce 1L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Smoky Chipotle Mayo 1L<span class="pk">Weekly: 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Smoky Chipotle Mayo 1L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Aioli 2.2KG<span class="pk">Weekly: 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Aioli 2.2KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Hollandaise French<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Hollandaise French" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Chilli Sauce<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Chilli Sauce" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Mayo<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Mayo" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Italian Glaze<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Italian Glaze" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">BBQ Sauce 4L<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="BBQ Sauce 4L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Tomato Sauce 4L<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Tomato Sauce 4L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Dijon Mustard 2.2KG<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Dijon Mustard 2.2KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
 <div class="cat">SPREADS &amp; TOPPINGS</div>
-<label class="row"><span class="nm">Chocolate Topping<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chocolate Topping" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Strawberry Topping<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Strawberry Topping" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Caramel Topping<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Caramel Topping" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Vanilla Topping<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Vanilla Topping" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Banana Topping<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Banana Topping" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Strawberry Jam<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Strawberry Jam" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Peanut Butter 2KG<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Peanut Butter 2KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Honey 3KG<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Honey 3KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Chocolate Topping<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chocolate Topping" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Strawberry Topping<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Strawberry Topping" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Caramel Topping<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Caramel Topping" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Vanilla Topping<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Vanilla Topping" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Banana Topping<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Banana Topping" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Strawberry Jam<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Strawberry Jam" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Peanut Butter 2KG<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Peanut Butter 2KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Honey 3KG<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Honey 3KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
 <div class="cat">SPICES &amp; SEASONING</div>
-<label class="row"><span class="nm">Portuguese Seasoning<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Portuguese Seasoning" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Chilli Flakes<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Chilli Flakes" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Paprika<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Paprika" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Dukkah<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Dukkah" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Sumac<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Sumac" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Chicken Salt<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Chicken Salt" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Black Pepper<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Black Pepper" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Salt Portions<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Salt Portions" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Pepper Portions<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Pepper Portions" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Cinnamon Sugar 500G<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Cinnamon Sugar 500G" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Portuguese Seasoning<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Portuguese Seasoning" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Chilli Flakes<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Chilli Flakes" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Paprika<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Paprika" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Dukkah<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Dukkah" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Sumac<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Sumac" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Chicken Salt<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Chicken Salt" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Black Pepper<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Black Pepper" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Salt Portions<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Salt Portions" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Pepper Portions<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Pepper Portions" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Cinnamon Sugar 500G<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Cinnamon Sugar 500G" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
 <div class="cat">NUTS, SEEDS &amp; GRAINS</div>
-<label class="row"><span class="nm">Pumpkin Pepitas KG<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Pumpkin Pepitas KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Raw Almond<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Raw Almond" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Almond Flakes KG<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Almond Flakes KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Pistachio Kernel KG<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Pistachio Kernel KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Quinoa<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Quinoa" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Chickpeas<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chickpeas" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Pumpkin Pepitas KG<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Pumpkin Pepitas KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Raw Almond<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Raw Almond" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Almond Flakes KG<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Almond Flakes KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Pistachio Kernel KG<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Pistachio Kernel KG" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Quinoa<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Quinoa" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Chickpeas<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Chickpeas" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
 <div class="cat">OILS, VINEGAR &amp; BAKING</div>
-<label class="row"><span class="nm">Cottonseed Oil 20L<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cottonseed Oil 20L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">White Vinegar 4L<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="White Vinegar 4L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Baking Paper<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Baking Paper" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Fairy Floss Pink<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Fairy Floss Pink" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Muffin Powder<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Muffin Powder" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Cottonseed Oil 20L<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cottonseed Oil 20L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">White Vinegar 4L<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="White Vinegar 4L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Baking Paper<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Baking Paper" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Fairy Floss Pink<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Fairy Floss Pink" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Muffin Powder<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Muffin Powder" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
 <div class="cat">PACKAGING &amp; CONSUMABLES</div>
-<label class="row"><span class="nm">Cling Wrap<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cling Wrap" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Aluminium Foil<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Aluminium Foil" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Large Gloves (500/box)<span class="pk">每週 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Large Gloves (500/box)" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Wooden Knives<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Wooden Knives" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Wooden Spoons<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Wooden Spoons" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Wooden Forks<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Wooden Forks" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Equal Sticks<span class="pk">每週 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Equal Sticks" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Cocktail Straw<span class="pk">每週 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cocktail Straw" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Cup Tray<span class="pk">每週 1 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cup Tray" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">T/A Plastic Box<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="T/A Plastic Box" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">T/A Plastic Lid<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="T/A Plastic Lid" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">T/A Uber Bag<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="T/A Uber Bag" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Handwash Towel<span class="pk">每週 6</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Handwash Towel" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Paper Towel Roll<span class="pk">每週 6</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Paper Towel Roll" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Blue Chux<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Blue Chux" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Brown Chux<span class="pk">每週 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Brown Chux" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Garbage Bags 120L<span class="pk">每週 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Garbage Bags 120L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<label class="row"><span class="nm">Invoice Roll<span class="pk">每週 10</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Invoice Roll" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
-<div class="cat">特別備註 / SPECIAL NOTES</div>
-<textarea id="note" rows="4" placeholder="有特別要 order 嘅嘢、或者想講嘅嘢,寫喺呢度&#10;Anything not on the list — write it here" oninput="upd()"></textarea>
+<label class="row"><span class="nm">Cling Wrap<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cling Wrap" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Aluminium Foil<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Aluminium Foil" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Large Gloves (500/box)<span class="pk">Weekly: 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Large Gloves (500/box)" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Wooden Knives<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Wooden Knives" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Wooden Spoons<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Wooden Spoons" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Wooden Forks<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Wooden Forks" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Equal Sticks<span class="pk">Weekly: 1</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Equal Sticks" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Cocktail Straw<span class="pk">Weekly: 2</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cocktail Straw" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Cup Tray<span class="pk">Weekly: 1 box</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Cup Tray" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">T/A Plastic Box<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="T/A Plastic Box" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">T/A Plastic Lid<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="T/A Plastic Lid" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">T/A Uber Bag<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="T/A Uber Bag" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Handwash Towel<span class="pk">Weekly: 6</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Handwash Towel" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Paper Towel Roll<span class="pk">Weekly: 6</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Paper Towel Roll" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Blue Chux<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Blue Chux" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Brown Chux<span class="pk">Weekly: 0.5</span></span><input type="number" inputmode="decimal" min="0" step="0.5" data-n="Brown Chux" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Garbage Bags 120L<span class="pk">Weekly: 3</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Garbage Bags 120L" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<label class="row"><span class="nm">Invoice Roll<span class="pk">Weekly: 10</span></span><input type="number" inputmode="numeric" min="0" step="1" data-n="Invoice Roll" placeholder="" oninput="upd()"><span class="z" onclick="setZero(this);return false;">0</span></label>
+<div class="cat">SPECIAL NOTES</div>
+<textarea id="note" rows="4" placeholder="Anything not on the list, or anything else to tell the supplier — write it here" oninput="upd()"></textarea>
 </div>
 
 <footer>
-  <div id="cnt">仲未填 &middot; nothing entered yet</div>
-  <button id="send" onclick="send()" disabled>用 WhatsApp 發出 &rarr;</button>
+  <div id="cnt">Nothing entered yet</div>
+  <button id="send" onclick="send()" disabled>Send by WhatsApp &rarr;</button>
   <div class="two">
-    <button onclick="copyTxt()">複製文字 Copy</button>
-    <button class="red" onclick="clearAll()">清空 Clear</button>
+    <button onclick="copyTxt()">Copy text</button>
+    <button class="red" onclick="clearAll()">Clear all</button>
   </div>
-  <div id="saved">自動儲存喺呢部手機 &middot; auto-saved on this phone</div>
+  <div id="saved">Auto-saved on this phone</div>
 </footer>
 
 <script>
@@ -235,14 +235,14 @@ function upd(){
   }
   var p = picked(), zeros = 0;
   for (var k = 0; k < p.length; k++) if (Number(p[k].q) === 0) zeros++;
-  var zt = zeros ? ' (其中 <b>' + zeros + '</b> 個 0)' : '';
+  var zt = zeros ? ' (<b>' + zeros + '</b> at 0)' : '';
   var nt = note.value.trim();
   note.className = nt ? 'on' : '';
   var msg;
-  if (p.length && nt) msg = '已填 <b>' + p.length + '</b> 樣' + zt + ' + 備註';
-  else if (p.length) msg = '已填 <b>' + p.length + '</b> 樣' + zt;
-  else if (nt) msg = '淨係備註 &middot; note only';
-  else msg = '仲未填 &middot; nothing entered yet';
+  if (p.length && nt) msg = '<b>' + p.length + '</b> items entered' + zt + ' + note';
+  else if (p.length) msg = '<b>' + p.length + '</b> items entered' + zt;
+  else if (nt) msg = 'Note only';
+  else msg = 'Nothing entered yet';
   document.getElementById('cnt').innerHTML = msg;
   document.getElementById('send').disabled = (p.length === 0 && !nt);
   save();
@@ -257,7 +257,7 @@ function build(){
   for (var i = 0; i < p.length; i++) t += p[i].q + ' x ' + p[i].n + '\n';
   t += '------------------\n' + p.length + ' items';
   var nt = note.value.trim();
-  if (nt) t += '\n\n*** 備註 / NOTES ***\n' + nt;
+  if (nt) t += '\n\n*** NOTES ***\n' + nt;
   return t;
 }
 
@@ -269,15 +269,15 @@ function copyTxt(){
   var t = build();
   if (navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(t).then(function(){
-      alert('已複製,貼落 WhatsApp 就得');
-    }, function(){ prompt('複製呢段文字:', t); });
+      alert('Copied. Paste it into WhatsApp.');
+    }, function(){ prompt('Copy this text:', t); });
   } else {
-    prompt('複製呢段文字:', t);
+    prompt('Copy this text:', t);
   }
 }
 
 function clearAll(){
-  if (!confirm('清空全部數量同備註?')) return;
+  if (!confirm('Clear all quantities and notes?')) return;
   for (var i = 0; i < qty.length; i++) qty[i].value = '';
   note.value = '';
   try { localStorage.removeItem(KEY); } catch(e){}
