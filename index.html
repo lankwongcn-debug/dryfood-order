@@ -56,7 +56,7 @@ button:disabled{background:#c3cad6}
   <h1>DRY FOOD ORDER</h1>
   <div class="hint">Count the stock on hand and enter it for each item (halves OK, e.g. 0.5).<br>
   <b>None left? Tap the &laquo;0&raquo; on the right.</b> Leave blank if not counted.<br>
-  Order = Weekly &minus; Stock (never less than 1). Tap the green button to send.</div>
+  Order = Weekly &minus; Stock (min 1). Tap the green button &rarr; choose WhatsApp.</div>
   <div class="meta">
     <input id="who" placeholder="Your name" oninput="save()">
     <input id="when" type="date" onchange="save()">
@@ -166,7 +166,7 @@ button:disabled{background:#c3cad6}
 
 <footer>
   <div id="cnt">Nothing entered yet</div>
-  <button id="send" onclick="send()" disabled>Send by WhatsApp &rarr;</button>
+  <button id="send" onclick="send()" disabled>Send order picture &rarr;</button>
   <div class="two">
     <button onclick="copyTxt()">Copy text</button>
     <button class="red" onclick="clearAll()">Clear all</button>
@@ -288,8 +288,72 @@ function build(){
   return t;
 }
 
+// The order goes out as a picture of a table (like a spreadsheet), because a
+// text table wraps on a phone screen. Drawn on a canvas, then handed to the
+// phone's share sheet so staff can pick WhatsApp.
+function fmt(x){ return String(Math.round(x * 100) / 100); }
+
+function drawTable(){
+  var p = picked(), nt = note.value.trim();
+  var W = 1080, PAD = 40, RH = 56, HEAD = 190;
+  var cols = [PAD, 640, 800, 940];            // left edges: item, weekly, stock, order
+  var noteLines = nt ? nt.split(/\n/) : [];
+  var H = HEAD + RH * (p.length + 1) + 90 + (noteLines.length ? 60 + noteLines.length * 40 : 0);
+  var c = document.createElement('canvas'); c.width = W; c.height = H;
+  var g = c.getContext('2d');
+  g.fillStyle = '#ffffff'; g.fillRect(0, 0, W, H);
+  g.fillStyle = '#1f3864'; g.fillRect(0, 0, W, 120);
+  g.fillStyle = '#ffffff'; g.font = 'bold 44px Arial, sans-serif'; g.fillText('DRY FOOD ORDER', PAD, 72);
+  g.font = '26px Arial, sans-serif';
+  g.fillText((when.value || '') + (who.value.trim() ? '   \u00b7   ' + who.value.trim() : ''), PAD, 106);
+  var y = HEAD - 40;
+  g.fillStyle = '#d9e2f3'; g.fillRect(PAD - 10, y, W - 2 * PAD + 20, RH);
+  g.fillStyle = '#1f3864'; g.font = 'bold 28px Arial, sans-serif';
+  var hd = ['ITEM', 'WEEKLY', 'STOCK', 'ORDER'];
+  for (var h = 0; h < 4; h++) g.fillText(hd[h], cols[h], y + 38);
+  y += RH;
+  var toOrder = 0;
+  for (var i = 0; i < p.length; i++){
+    if (i % 2) { g.fillStyle = '#f4f6fa'; g.fillRect(PAD - 10, y, W - 2 * PAD + 20, RH); }
+    var zero = p[i].o === 0;
+    if (!zero) toOrder++;
+    g.fillStyle = zero ? '#9aa3b2' : '#16233c'; g.font = '28px Arial, sans-serif';
+    var name = p[i].n; while (g.measureText(name).width > cols[1] - cols[0] - 20) name = name.slice(0, -1);
+    g.fillText(name, cols[0], y + 38);
+    g.fillText(fmt(p[i].w), cols[1], y + 38);
+    g.fillText(fmt(p[i].s), cols[2], y + 38);
+    g.font = 'bold 30px Arial, sans-serif'; g.fillStyle = zero ? '#9aa3b2' : '#2e7d32';
+    g.fillText(fmt(p[i].o), cols[3], y + 38);
+    y += RH;
+  }
+  g.strokeStyle = '#ccd4e2'; g.lineWidth = 2;
+  g.strokeRect(PAD - 10, HEAD - 40, W - 2 * PAD + 20, y - (HEAD - 40));
+  g.fillStyle = '#1f3864'; g.font = 'bold 28px Arial, sans-serif';
+  g.fillText(p.length + ' counted  \u00b7  ' + toOrder + ' to order', PAD, y + 55);
+  if (noteLines.length){
+    y += 115; g.fillText('NOTES', PAD, y);
+    g.font = '26px Arial, sans-serif'; g.fillStyle = '#16233c';
+    for (var n = 0; n < noteLines.length; n++) g.fillText(noteLines[n], PAD, y + 40 * (n + 1));
+  }
+  return c;
+}
+
 function send(){
-  location.href = 'https://wa.me/?text=' + encodeURIComponent(build());
+  var c = drawTable();
+  var data = atob(c.toDataURL('image/png').split(',')[1]);
+  var bytes = new Uint8Array(data.length);
+  for (var i = 0; i < data.length; i++) bytes[i] = data.charCodeAt(i);
+  var fname = 'dry-food-order-' + (when.value || todayStr()) + '.png';
+  var file = new File([bytes], fname, {type: 'image/png'});
+  if (navigator.canShare && navigator.canShare({files: [file]})){
+    navigator.share({files: [file], title: 'Dry food order'}).catch(function(){});
+  } else {
+    // No share sheet (e.g. some desktop browsers): save the picture instead.
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(file); a.download = fname;
+    document.body.appendChild(a); a.click(); a.remove();
+    alert('Picture saved. Attach it in WhatsApp.');
+  }
 }
 
 function copyTxt(){
